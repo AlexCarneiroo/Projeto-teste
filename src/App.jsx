@@ -9,6 +9,7 @@ function App() {
   const [numero, setNumero] = useState('')
   const [email, setEmail] = useState('')
   const [cidade, setCidade] = useState('')
+  const [cpf,setCpf] =  useState('')
 
 
   const handlClick = () => {
@@ -16,7 +17,8 @@ function App() {
       nomes: nome,
       numero: numero,
       email: email,
-      cidade: cidade
+      cidade: cidade,
+      cpf:cpf
     }])
 
 
@@ -36,6 +38,16 @@ function App() {
             placeholder='Digite Seu Nome'
             value={nome}
             onChange={(e) => setNome(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="">CPF</label>
+          <input
+            type="text"
+            placeholder='Digite Seu CPF'
+            value={cpf}
+            onChange={(e) => setCpf(e.target.value)}
             required
           />
         </div>
@@ -82,6 +94,7 @@ function App() {
               <th>Numero</th>
               <th>Email</th>
               <th>Cidade</th>
+              <th>CPF</th>
             </tr>
           </thead>
 
@@ -92,6 +105,7 @@ function App() {
                 <td>{item.numero}</td>
                 <td>{item.email}</td>
                 <td>{item.cidade}</td>
+                <td>{item.cpf}</td>
               </tr>
             ))}
           </tbody>
